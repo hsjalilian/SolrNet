@@ -69,6 +69,16 @@ namespace SolrNet.Impl {
                         fieldNode.Add(boostAtt);
                     }
 
+                    //if (field.Property.PropertyType.Name.ToLower() == "string")
+                    //{
+                    //    var typeAtt = new XAttribute("type", "string");
+                    //    fieldNode.Add(typeAtt);
+                    //}
+                    //else if ("1231" == "")
+                    //{
+
+                    //}
+
                     var v = RemoveControlCharacters(n.FieldValue);
                     if (v != null) {
                         fieldNode.Value = v;

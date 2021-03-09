@@ -15,18 +15,18 @@ namespace SolrNet.Tests
             this.testOutputHelper = testOutputHelper;
         }
         
-        [Fact]
-        public void UriLength_Equivalent()
-        {
-            var property =
-                from uri in Property.ForAll(GenX.uri)
-                let ub = new UriBuilder(uri)
-                let expected = ub.Uri.ToString().Length
-                let actual = UriValidator.UriLength(ub)
-                select AssertEqual(expected: expected, actual: actual);
+        //[Fact]
+        //public void UriLength_Equivalent()
+        //{
+        //    var property =
+        //        from uri in Property.forAll<>(GenX.uri)
+        //        let ub = new UriBuilder(uri)
+        //        let expected = ub.Uri.ToString().Length
+        //        let actual = UriValidator.UriLength(ub)
+        //        select AssertEqual(expected: expected, actual: actual);
 
-            Property.Check(property);
-        }
+        //    Property.Check(property);
+        //}
 
         void AssertEqual(int expected, int actual)
         {

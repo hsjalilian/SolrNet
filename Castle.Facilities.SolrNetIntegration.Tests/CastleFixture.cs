@@ -63,7 +63,7 @@ namespace Castle.Facilities.SolrNetIntegration.Tests {
             var mapper = new MReadOnlyMappingManager();
             var solrFacility = new SolrNetFacility("http://localhost:8983/solr") {Mapper = mapper};
             var container = new WindsorContainer();
-            container.AddFacility("solr", solrFacility);
+            container.AddFacility(solrFacility);
             var m = container.Resolve<IReadOnlyMappingManager>();
             Assert.Same(m, mapper);
         }

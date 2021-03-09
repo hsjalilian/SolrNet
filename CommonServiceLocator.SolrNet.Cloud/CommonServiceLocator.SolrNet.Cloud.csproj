@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>CommonServiceLocator.SolrNet.Cloud</AssemblyName>
     <RootNamespace>CommonServiceLocator.SolrNet.Cloud</RootNamespace>
     <Version>1.0.19</Version>
@@ -20,6 +20,6 @@
     <ProjectReference Include="..\SolrNet.Cloud\SolrNet.Cloud.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CommonServiceLocator" Version="2.0.2" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-#region license
+﻿#region license
 // Copyright (c) 2007-2010 Mauricio Scheffer
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -405,7 +405,7 @@ namespace SolrNet.Tests
         public void Performance()
         {
             var container = new ProfilingContainer();
-            container.AddFacility("solr", new SolrNetFacility("http://localhost"));
+            container.AddFacility( new SolrNetFacility("http://localhost"));
             ProfileTest(container);
         }
 

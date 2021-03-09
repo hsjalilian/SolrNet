@@ -1,21 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.19</Version>
-    <Authors>Mauricio Scheffer and contributors</Authors>
+    <Version>2.1.0</Version>
+    <Authors>Hossein Jalilian</Authors>
     <Company />
     <Product>SolrNet</Product>
-    <Description>
-      SolrNet is a .NET Open Source client for Apache Solr. This version of SolrNet is compatible with Solr 1.x to Solr 7.x.
-      This is the SolrNet.Core package, and should be used in combination with any of our easy to use Dependency Injection SolrNet integration libraries.
-    </Description>
-    <RepositoryUrl>https://github.com/solrnet/solrnet</RepositoryUrl>
+    <Description>SolrNet is a .NET Open Source client for Apache Solr. This version of Solr is compatible with Solr 1.x to Solr 8.x.
+This is the Solr.Core package, and should be used in combination with any of our easy to use Dependency Injection Solr integration libraries.
+</Description>
+    <RepositoryUrl>https://github.com/hsjalilian/solrnet</RepositoryUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/SolrNet/SolrNet/master/license.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/solrnet/solrnet</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/hsjalilian/solrnet</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://github.com/solrnet/solrnet/raw/master/Documentation/solr.png</PackageIconUrl>
-    <PackageId>SolrNet.Core</PackageId>
+    <PackageId>Solr.Core</PackageId>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <OutputType>Library</OutputType>
+    <UserSecretsId>ab8cf72a-1fd9-40d9-a918-7f42a7e5d1b6</UserSecretsId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|netstandard2.0'">
     <DocumentationFile>bin\Release\netstandard2.0\SolrNet.xml</DocumentationFile>
@@ -47,6 +49,6 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 </Project>

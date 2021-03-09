@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Unity.Builder;
 using Unity.Builder.Strategy;
-
+//using Unity.Strategies;
 
 namespace Unity.SolrNetCloudIntegration.Collections
 {

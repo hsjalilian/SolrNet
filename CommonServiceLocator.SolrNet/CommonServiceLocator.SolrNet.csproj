@@ -1,24 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>CommonServiceLocator.SolrNet</AssemblyName>
     <RootNamespace>CommonServiceLocator.SolrNet</RootNamespace>
-    <Version>1.0.19</Version>
-    <RepositoryUrl>https://github.com/solrnet/solrnet</RepositoryUrl>
+    <Version>2.1.0</Version>
+    <RepositoryUrl>https://github.com/hsjalilian/solrnet</RepositoryUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/SolrNet/SolrNet/master/license.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/solrnet/solrnet</PackageProjectUrl>
-    <PackageId>SolrNet</PackageId>
+    <PackageProjectUrl>https://github.com/hsjalilian/solrnet</PackageProjectUrl>
+    <PackageId>Solr</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Mauricio Scheffer and contributors</Authors>
+    <Authors>Hossein Jalilian</Authors>
     <Company />
-    <Product>SolrNet</Product>
-    <Description>SolrNet is a .NET Open Source client for Apache Solr. This version of SolrNet is compatible with Solr 1.x to Solr 7.x. This package comes with a build in easy to use Dependency Injection for SolrNet.Core.</Description>
+    <Product>Solr</Product>
+    <Description>Solr is a .NET Open Source client for Apache Solr. This version of Solr is compatible with Solr 1.x to Solr 8.x. This package comes with a build in easy to use Dependency Injection for Solr.Core.</Description>
     <PackageIconUrl>https://github.com/solrnet/solrnet/raw/master/Documentation/solr.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SolrNet\SolrNet.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CommonServiceLocator" Version="2.0.2" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
   </ItemGroup>
 </Project>

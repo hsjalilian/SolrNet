@@ -30,12 +30,27 @@ namespace SolrNet.Mapping {
             var props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
             var kvAttrs = props.Select(prop => new KeyValuePair<PropertyInfo, T[]>(prop, GetCustomAttributes<T>(prop)));
             var propsAttrs = kvAttrs.Where(kv => kv.Value.Length > 0);
+            
+            return propsAttrs;
+        }
+
+        public virtual IEnumerable<KeyValuePair<PropertyInfo, SolrFieldAttribute[]>> GetPropertiesWithOutAttribute(Type type) 
+        {
+            var props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            var kvAttrs = props.Select(prop => new KeyValuePair<PropertyInfo, SolrFieldAttribute[]>(prop, GetCustom(prop)));
+            var propsAttrs = kvAttrs.Where(kv => kv.Value.Length > 0);
+
             return propsAttrs;
         }
 
         /// <inheritdoc />
         public IDictionary<string,SolrFieldModel> GetFields(Type type) {
             var propsAttrs = GetPropertiesWithAttribute<SolrFieldAttribute>(type);
+
+            if (propsAttrs.Select(x => x.Key).Count() == 0)
+            {
+                propsAttrs = GetPropertiesWithOutAttribute(type);
+            }
 
             var fields = propsAttrs
                 .Select(kv => new SolrFieldModel(
@@ -54,6 +69,19 @@ namespace SolrNet.Mapping {
         public virtual T[] GetCustomAttributes<T>(PropertyInfo prop) where T : Attribute {
             return (T[]) prop.GetCustomAttributes(typeof (T), true);
         }
+
+        public virtual SolrFieldAttribute[] GetCustom(PropertyInfo prop) 
+        {
+            return new List<SolrFieldAttribute>()
+            {
+                new SolrFieldAttribute{
+                    FieldName=prop.Name.ToLower(),
+                    Boost=0.0f
+                }
+            }.ToArray();
+        }
+
+
 
         /// <inheritdoc />
         public SolrFieldModel GetUniqueKey(Type type) {

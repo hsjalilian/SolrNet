@@ -25,8 +25,13 @@ namespace SolrNet.Impl.FieldSerializers {
     public class DateTimeFieldSerializer : AbstractFieldSerializer<DateTime> {
         public static readonly string DateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss.FFF'Z'";
 
-        public static string SerializeDate(DateTime dt) {
+        public static string SerializeDate_Old(DateTime dt) {
             return dt.ToUniversalTime().ToString(DateTimeFormat, CultureInfo.InvariantCulture);
+        }
+
+        public static string SerializeDate(DateTime dt)
+        {
+            return dt.ToString(DateTimeFormat, CultureInfo.InvariantCulture);
         }
 
         /// <inheritdoc />

@@ -25,7 +25,7 @@ namespace SolrNet.Tests.Utils {
 
         public ProfilingContainer() {
             profiler = new ProfilerFacility();
-            AddFacility("profiler", profiler);
+            AddFacility(profiler);
         }
 
         public Node<KeyValuePair<MethodInfo, TimeSpan>> GetProfile() {
